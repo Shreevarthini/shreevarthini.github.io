@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BTQR7MK5M3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BTQR7MK5M3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shreevarthini</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #13131a;
+    --bg-card2: #1a1a24;
+    --accent: #7af5c2;
+    --accent2: #a78bfa;
+    --accent3: #f9a825;
+    --text: #e8e8f0;
+    --muted: #7c7c9a;
+    --border: rgba(122,245,194,0.12);
+    --border2: rgba(167,139,250,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* --- NAV --- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* --- HERO --- */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(122,245,194,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122,245,194,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+  }
+  .hero-glow {
+    position: absolute; top: 20%; left: 10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(122,245,194,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute; bottom: 10%; right: 5%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: rgba(122,245,194,0.08);
+    border: 1px solid rgba(122,245,194,0.2);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.06em;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: var(--accent);
+    margin-left: 4px;
+    vertical-align: middle;
+    border-radius: 1px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent);
+    color: #0a0a0f;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s, transform 0.15s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 500;
+    font-size: 0.88rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { border-color: var(--accent2); transform: translateY(-1px); }
+
+  .hero-stats {
+    display: flex; gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* --- SECTION --- */
+  section {
+    padding: 6rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 120px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  /* --- ABOUT --- */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: center;
+  }
+  .about-avatar {
+    width: 100%; aspect-ratio: 1;
+    border-radius: 20px;
+    background: var(--bg-card2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: var(--accent);
+    position: relative;
+    overflow: hidden;
+    max-width: 280px;
+  }
+  .about-avatar::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(122,245,194,0.08), transparent 70%);
+  }
+  .about-avatar-initials { position: relative; z-index: 1; }
+  .about-text p {
+    color: var(--muted); line-height: 1.85; margin-bottom: 1.2rem; font-size: 1rem;
+  }
+  .about-text p span { color: var(--text); }
+  .about-highlights {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.5rem;
+  }
+  .about-highlight-chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent3);
+    background: rgba(249,168,37,0.08);
+    border: 1px solid rgba(249,168,37,0.2);
+    padding: 5px 14px; border-radius: 100px;
+  }
+
+  /* --- PROJECT LINKS --- */
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    transition: border-color 0.25s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card:hover {
+    border-color: rgba(122,245,194,0.3);
+    transform: translateY(-3px);
+  }
+  .project-links {
+    position: absolute; top: 1.2rem; right: 1.2rem;
+    display: flex; gap: 8px;
+  }
+  .project-link-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-card2);
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .project-link-icon:hover {
+    color: var(--accent);
+    border-color: rgba(122,245,194,0.3);
+    background: rgba(122,245,194,0.06);
+  }
+  .project-link-icon svg { width: 15px; height: 15px; fill: currentColor; }
+  .project-link-icon svg.stroke-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .building-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(122,245,194,0.2);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .building-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), transparent);
+  }
+  .building-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: rgba(122,245,194,0.1);
+    border: 1px solid rgba(122,245,194,0.2);
+    padding: 4px 12px; border-radius: 100px;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.06em;
+  }
+  .building-badge span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); display: inline-block;
+    animation: pulse-dot 1.5s infinite;
+  }
+  .building-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  .building-card p { color: var(--muted); line-height: 1.7; max-width: 700px; }
+  .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+  .pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--border2);
+    color: var(--accent2);
+    background: rgba(167,139,250,0.06);
+    letter-spacing: 0.03em;
+  }
+
+  /* --- PROJECTS GRID --- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 0.8rem;
+  }
+  .project-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.25;
+  }
+  .project-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+  }
+  .metric-tag {
+    display: inline-flex; align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: rgba(122,245,194,0.08);
+    padding: 3px 10px; border-radius: 6px;
+    margin-right: 6px; margin-bottom: 6px;
+  }
+
+  /* --- SKILLS --- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+  .skill-group:hover { border-color: var(--border2); }
+  .skill-group-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .skill-group-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+  }
+  .skill-list {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .skill-chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.73rem;
+    color: var(--muted);
+    background: var(--bg-card2);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .skill-chip:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
+
+  /* --- EXPERIENCE --- */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+  }
+  .timeline-item {
+    padding-left: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -4px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .timeline-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+  .timeline-role {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-company {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .timeline-bullets { list-style: none; }
+  .timeline-bullets li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  .timeline-bullets li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
+    top: 3px;
+  }
+  .highlight { color: var(--text); font-weight: 500; }
+
+  /* --- EDUCATION & CERTS --- */
+  .edu-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+  }
+  .edu-degree {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+  .edu-school {
+    font-size: 0.88rem;
+    color: var(--accent2);
+    margin-bottom: 0.3rem;
+  }
+  .edu-detail {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .edu-score {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(122,245,194,0.08);
+    border: 1px solid rgba(122,245,194,0.15);
+    padding: 3px 10px; border-radius: 6px;
+    margin-top: 0.8rem;
+  }
+  .cert-list { display: flex; flex-direction: column; gap: 1rem; }
+  .cert-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    gap: 1rem;
+  }
+  .cert-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .cert-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.73rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .cert-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.73rem;
+    color: var(--accent3);
+    white-space: nowrap;
+  }
+
+  /* --- CONTACT --- */
+  .contact-section {
+    padding: 6rem 4rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .contact-section::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 300px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .contact-links {
+    display: flex; justify-content: center; gap: 1.5rem;
+    flex-wrap: wrap; margin-top: 2rem;
+  }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .contact-link:hover { color: var(--accent); border-color: rgba(122,245,194,0.3); }
+  
+  .contact-link svg { width: 20px; height: 20px; }
+
+  /* --- FOOTER --- */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--border);
+  }
+
+  /* --- SCROLL ANIMATIONS --- */
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-avatar { max-width: 140px; font-size: 3rem; aspect-ratio: 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Shreevarthini</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#building">Building</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <h1>
+    hi,<br>
+    Shreevarthini here <span class="cursor"></span>
+  </h1>
+
+  <p class="hero-sub">
+    MSc Advanced CS (Distinction) | Ex-Walmart Global Tech | Building intelligent systems with
+    RAG, LLMs, and ML at production scale | Based in United Kingdom.
+  </p>
+  
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3+</div>
+      <div class="stat-label">Years at Walmart Tech</div>
+    </div>
+    <div>
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Projects Built</div>
+    </div>
+    <div>
+      <div class="stat-num">70.7%</div>
+      <div class="stat-label">MSc Distinction Avg</div>
+    </div>
+    <div>
+      <div class="stat-num">98.6%</div>
+      <div class="stat-label">Best Model F1 Score</div>
+    </div>
+  </div>
+</div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <div class="about-grid">
+    <div>
+      <div class="about-avatar">
+        <img src="Shree.jpg" alt="Shreevarthini Rajalakshmi Venkatesh Kumar">
+      </div>
+    </div>
+    <div class="about-text fade-in">
+      <p>
+        I'm <span>Shreevarthini</span> — an AI/ML Engineer and Data Scientist currently completing my
+        <span>MSc in Advanced Computer Science (Distinction)</span> at the University of Leicester, UK.
+      </p>
+      <p>
+        I spent <span>3 years at Walmart Global Tech</span> building Python automation pipelines, observability
+        frameworks across 12+ enterprise applications, and internal data tooling used by hundreds of engineers.
+        I know what it takes to ship reliable systems at production scale, not just notebooks.
+      </p>
+      <p>
+        My current passion is <span>GenAI and RAG systems</span>. I'm finishing my dissertation building an
+        AI financial assistant for LSE investors, a full RAG pipeline with real-time data, LLM reasoning,
+        and an ELI5 layer that makes complex finance accessible to everyday people.
+      </p>
+      <p>
+        I love the intersection of <span>rigorous machine learning</span> and products that actually change
+        how people interact with information. If you're building in that space, let's talk.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENTLY BUILDING -->
+<section id="building">
+  <div class="section-label">Currently Building</div>
+  <div class="building-card fade-in">
+    <div class="building-badge"><span></span> In Progress | May 2026</div>
+    <h3>Financial Investment Assistant</h3>
+    <p>
+      MSc Dissertation at University of Leicester. An AI-powered assistant for London Stock Exchange investors
+      built on a RAG pipeline with real-time financial data. Features a white-box architecture showing
+      source-verified data alongside LLM reasoning, an ELI5 financial jargon layer, and sentiment analysis
+      on financial news.
+    </p>
+    <div class="tech-pills">
+      <span class="pill">LlamaIndex</span>
+      <span class="pill">RAG</span>
+      <span class="pill">LLMs</span>
+      <span class="pill">Embeddings</span>
+      <span class="pill">Prompt Engineering</span>
+      <span class="pill">yfinance</span>
+      <span class="pill">Gradio</span>
+      <span class="pill">Sentiment Analysis</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">Things I've Built</h2>
+  <div class="projects-grid">
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/fake-news-detection" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://fake-news-detection-86xmdts23fvzwmo2abq4ac.streamlit.app/" target="_blank" class="project-link-icon" title="Live Demo">
+          <svg viewBox="0 0 24 24" class="stroke-icon" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="project-category">NLP | Deep Learning</div>
+      <h3>Fake News Detection</h3>
+      <p>Fine-tuned DistilBERT for binary fake news classification on US news datasets. Deployed as a live demo accepting US-based headlines.</p>
+      <div>
+        <span class="metric-tag">F1 = 98.6%</span>
+        <span class="metric-tag">Live Demo</span>
+      </div>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">DistilBERT</span>
+        <span class="pill">XGBoost</span>
+        <span class="pill">Scikit-learn</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/Fraud-Detection" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://huggingface.co/spaces/Shreevarthini/Fraud-Detection-CC" target="_blank" class="project-link-icon" title="Live Demo">
+          <svg viewBox="0 0 24 24" class="stroke-icon" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="project-category">ML | Imbalanced Data</div>
+      <h3>Financial Fraud Detection</h3>
+      <p>High-precision classifier on 284k+ transactions with only 0.17% fraud rate. Optimised for Recall and AUPRC, reducing false negatives by 15%.</p>
+      <div>
+        <span class="metric-tag">284k+ records</span>
+        <span class="metric-tag">−15% false negatives</span>
+      </div>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">XGBoost</span>
+        <span class="pill">SMOTE</span>
+        <span class="pill">Python</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/Object-detection" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+      <div class="project-category">Computer Vision</div>
+      <h3>Chess Piece Object Detection</h3>
+      <p>Deep Learning model to classify and localise chess piece types in real time on a custom-annotated dataset using YOLOv8.</p>
+      <div>
+        <span class="metric-tag">mAP 79%</span>
+        <span class="metric-tag">Custom Dataset</span>
+      </div>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">YOLOv8</span>
+        <span class="pill">PyTorch</span>
+        <span class="pill">Ultralytics</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/Food-recommender" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://foodrecommendersystem.streamlit.app/" target="_blank" class="project-link-icon" title="Live Demo">
+          <svg viewBox="0 0 24 24" class="stroke-icon" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="project-category">GenAI | RAG</div>
+      <h3>Food Recommendation System</h3>
+      <p>High-performance RAG-based recommendation engine using ChromaDB for vector similarity search with semantic information retrieval and optimised inference latency.</p>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">ChromaDB</span>
+        <span class="pill">LlamaIndex</span>
+        <span class="pill">Llama 3</span>
+        <span class="pill">Groq API</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-category">Cloud | Distributed Systems</div>
+      <h3>Real-Time Collaborative Whiteboard</h3>
+      <p>Fault-tolerant private cloud on AWS EKS across multiple Availability Zones with Redis Pub/Sub for real-time state synchronisation and sub-millisecond latency.</p>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">AWS EKS</span>
+        <span class="pill">Redis</span>
+        <span class="pill">WebSockets</span>
+        <span class="pill">Docker</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/Prediction-of-Covid-19-patients" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+      <div class="project-category">Big Data | Prediction</div>
+      <h3>COVID-19 Admission Prediction</h3>
+      <p>Large-scale data cleansing and feature engineering on 100k+ rows using distributed processing. Classification and time-series forecasting models achieving 85% accuracy.</p>
+      <div>
+        <span class="metric-tag">85% accuracy</span>
+        <span class="metric-tag">100k+ rows</span>
+      </div>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">Apache Spark</span>
+        <span class="pill">Hadoop</span>
+        <span class="pill">RandomForest</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/Youtube-Rag-AI-Bot" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://yt-rag-bot.onrender.com" target="_blank" class="project-link-icon" title="Live Demo">
+          <svg viewBox="0 0 24 24" class="stroke-icon" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="project-category">GenAI | Automation</div>
+      <h3>YouTube Video Summariser</h3>
+      <p>Automated transcription-to-summary pipeline using RAG, FAISS vector store and an LLM summarisation layer to generate structured summaries from video content.</p>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">RAG</span>
+        <span class="pill">FAISS</span>
+        <span class="pill">LLMs</span>
+        <span class="pill">Python</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-links">
+        <a href="https://github.com/Shreevarthini/Loan-prediction" target="_blank" class="project-link-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+      <div class="project-category">ML | End-to-End</div>
+      <h3>Loan Approval Prediction</h3>
+      <p>End-to-end ML workflow covering NLP-based text preprocessing, feature engineering, model selection and performance optimisation for loan approval classification.</p>
+      <div class="tech-pills" style="margin-top:0.8rem;">
+        <span class="pill">Scikit-learn</span>
+        <span class="pill">NLP</span>
+        <span class="pill">Feature Engineering</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Technical Skills</div>
+  <h2 class="section-title">What I Work With</h2>
+  <div class="skills-grid">
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-label">AI / ML</div>
+      <div class="skill-list">
+        <span class="skill-chip">Deep Learning</span>
+        <span class="skill-chip">Computer Vision</span>
+        <span class="skill-chip">NLP</span>
+        <span class="skill-chip">PyTorch</span>
+        <span class="skill-chip">Scikit-learn</span>
+        <span class="skill-chip">XGBoost</span>
+        <span class="skill-chip">HuggingFace</span>
+        <span class="skill-chip">MLOps</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-label">LLM & GenAI</div>
+      <div class="skill-list">
+        <span class="skill-chip">LangChain</span>
+        <span class="skill-chip">LlamaIndex</span>
+        <span class="skill-chip">LangGraph</span>
+        <span class="skill-chip">RAG</span>
+        <span class="skill-chip">Prompt Engineering</span>
+        <span class="skill-chip">Agent Frameworks</span>
+        <span class="skill-chip">ChromaDB</span>
+        <span class="skill-chip">FAISS</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-label">Data & Languages</div>
+      <div class="skill-list">
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Pandas</span>
+        <span class="skill-chip">NumPy</span>
+        <span class="skill-chip">Apache Spark</span>
+        <span class="skill-chip">Hadoop</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-label">Cloud & Infrastructure</div>
+      <div class="skill-list">
+        <span class="skill-chip">AWS (EKS, VPC, NLB)</span>
+        <span class="skill-chip">Azure</span>
+        <span class="skill-chip">Docker</span>
+        <span class="skill-chip">Kubernetes</span>
+        <span class="skill-chip">Redis</span>
+        <span class="skill-chip">CI/CD</span>
+        <span class="skill-chip">Splunk</span>
+        <span class="skill-chip">Grafana</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-label">Frontend & APIs</div>
+      <div class="skill-list">
+        <span class="skill-chip">React</span>
+        <span class="skill-chip">Next.js</span>
+        <span class="skill-chip">Flask</span>
+        <span class="skill-chip">FastAPI</span>
+        <span class="skill-chip">Gradio</span>
+        <span class="skill-chip">Streamlit</span>
+        <span class="skill-chip">Tailwind</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-label">Visualisation & BI</div>
+      <div class="skill-list">
+        <span class="skill-chip">Matplotlib</span>
+        <span class="skill-chip">Seaborn</span>
+        <span class="skill-chip">Grafana</span>
+        <span class="skill-chip">Splunk</span>
+        <span class="skill-chip">Excel</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I've Worked</h2>
+  <div class="timeline">
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-date">Jul 2022 — Jul 2024</div>
+      <div class="timeline-role">Technical Services Engineer II</div>
+      <div class="timeline-company">Walmart Global Tech India | Chennai</div>
+      <ul class="timeline-bullets">
+        <li>Owned end-to-end observability across <span class="highlight">12+ enterprise applications</span> in Splunk & Grafana, shifting from reactive monitoring to proactive anomaly detection.</li>
+        <li>Built Python automation tooling that fully eliminated manual diagnostic processes, reducing MTTR by <span class="highlight">30%</span>.</li>
+        <li>Led deep-stack debugging for <span class="highlight">50+ major production incidents</span>, identifying exact bug locations in code and cloud pipelines.</li>
+        <li>Built incident metrics pipelines that drove a <span class="highlight">78% reduction in redundant issues</span> through data-led remediation.</li>
+        <li>Awarded <span class="highlight">BRAVO and BADGIFY awards</span> for engineering excellence.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-date">Jul 2021 — Jul 2022</div>
+      <div class="timeline-role">Technical Services Engineer I</div>
+      <div class="timeline-company">Walmart Global Tech India | Chennai</div>
+      <ul class="timeline-bullets">
+        <li>Architected <span class="highlight">"Query Bot"</span>, a high-concurrency self-service data access tool (Python + Node.js) reducing manual data retrieval to zero effort.</li>
+        <li>Led critical infrastructure migrations with automated certificate lifecycle management ensuring zero-downtime transitions.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-date">Jun 2019</div>
+      <div class="timeline-role">UI/UX Intern</div>
+      <div class="timeline-company">Xmplar Management Solutions | Bengaluru</div>
+      <ul class="timeline-bullets">
+        <li>Designed and tested user interfaces for ERP modules in Crest Management System.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic Background</h2>
+  <div class="edu-grid" style="margin-bottom: 3rem;">
+    <div class="edu-card fade-in">
+      <div class="edu-degree">MSc Advanced Computer Science</div>
+      <div class="edu-school">University of Leicester, UK</div>
+      <div class="edu-detail">Jan 2025 – May 2026 (Expected)</div>
+      <div class="edu-score">70.7% | Distinction (First Class Equivalent)</div>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="edu-degree">BE Computer Science & Engineering</div>
+      <div class="edu-school">Thiagarajar College of Engineering, Anna University</div>
+      <div class="edu-detail">Aug 2017 – Jun 2021 | Madurai, India</div>
+      <div class="edu-score">84.9% | Distinction</div>
+    </div>
+  </div>
+
+  <div class="section-label">Certifications</div>
+  <div class="cert-list">
+    <div class="cert-item fade-in">
+      <div>
+        <div class="cert-name">IBM RAG and Agentic AI Professional Certificate</div>
+        <div class="cert-org">Coursera - LangGraph, RAG Systems, NLP Pipelines</div>
+      </div>
+      <div class="cert-date">Mar 2026</div>
+    </div>
+    <div class="cert-item fade-in">
+      <div>
+        <div class="cert-name">BCG GenAI Job Simulation</div>
+        <div class="cert-org">Forage — AI Financial Chatbot, 10-K/10-Q Analysis</div>
+      </div>
+      <div class="cert-date">Mar 2026</div>
+    </div>
+    <div class="cert-item fade-in">
+      <div>
+        <div class="cert-name">Google Foundations of Cybersecurity</div>
+        <div class="cert-org">Coursera — Threat Analysis, Security Frameworks</div>
+      </div>
+      <div class="cert-date">Jan 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-label" style="justify-content:center; margin-bottom: 1rem;">Get In Touch</div>
+  <h2 class="section-title" style="font-family:'DM Serif Display',serif; font-size: clamp(1.8rem,3vw,2.5rem);">
+    <em style="color: var(--accent); font-style: italic;">Let's build something intelligent.</em>
+  </h2>
+  <div class="contact-links">
+    <!-- Email -->
+    <a class="contact-link" href="mailto:rvshreevarthini@gmail.com" title="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <!-- LinkedIn -->
+    <a class="contact-link" href="https://www.linkedin.com/in/shreevarthini-r-v/" target="_blank" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <!-- GitHub -->
+    <a class="contact-link" href="https://github.com/Shreevarthini" target="_blank" title="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <!-- Phone -->
+    <a class="contact-link" href="tel:+447887176984" title="Phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  Built by Shreevarthini R V
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
